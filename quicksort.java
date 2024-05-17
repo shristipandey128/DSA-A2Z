@@ -19,15 +19,16 @@ class Solution
     int pivot=arr[low];
     int left=low+1,right=high;
  while(right>=left){
-  if (left <= right && arr[left] <= pivot)  {
+  if (left <= right && arr[left] <= pivot)     // this condition will also work arr[left] <= pivot
+   {
       left++;
   } 
-  else if(arr[left]>=pivot && arr[right]<=pivot){
+  else if(arr[left]>=pivot && arr[right]<=pivot){  
       int temp=arr[left];
       arr[left]=arr[right];
       arr[right]=temp;
   }
-  if(left <= right && arr[right] > pivot){
+  if(left <= right && arr[right] > pivot){//  // this condition will also work  arr[right] > pivot
       right--;
   }
  }
