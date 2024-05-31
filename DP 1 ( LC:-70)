@@ -1,0 +1,41 @@
+///The recursive solution 
+
+class Solution {
+    
+    public int climbStairs(int n) {
+    
+        if(n == 0 || n == 1) 
+            return 1;
+        
+        return climbStairs(n - 1) + climbStairs(n - 2);
+      
+    }
+    
+   
+}
+
+
+///The Dp solution (Tabulation )(Bottom-Up)
+
+class Solution {
+    
+    public int climbStairs(int n) {
+
+        //Tabulation (bottom-up)
+         int[] climbStairs = new int[n + 1]; // created an array which will store all the value 
+       
+        if(n==1 ||n==0) return 1; //Base case 
+        climbStairs[0]=1;
+        climbStairs[1]=1;
+
+//Using loop we can find for the rest of n value 
+//using the dp we can calculate for big  number as this is recursive base question 
+     for(int i=2;i<=n;i++){
+         climbStairs[i]=climbStairs[i-1]+climbStairs[i-2];
+     }
+         return climbStairs[n];
+    
+    
+   
+}
+}
